@@ -9,18 +9,18 @@
  *
  * @link              https://profiles.wordpress.org/sagarlakhani/
  * @since             1.0.0
- * @package           Kamaldhari_Sync_Post_With_Language_Addon
+ * @package           Sync_Post_With_Language_Addon
  *
  * @wordpress-plugin
- * Plugin Name:       Kamaldhari Sync Post with Language Addon
+ * Plugin Name:       Sync Post with Language Addon
  * Plugin URI:        https://profiles.wordpress.org/sagarlakhani/
  * Description:       This Plugin is used to extend the functionality of the plugin "Sync Post With Other Site" and allows syncing posts with different languages by using chatgpt-4o-latest API.
  * Version:           1.0.0
  * Author:            Sagar Lakhani
- * Author URI:        https://profiles.wordpress.org/sagarlakhani//
+ * Author URI:        https://profiles.wordpress.org/sagarlakhani/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       kamaldhari-sync-post-with-language-addon
+ * Text Domain:       sync-post-with-language-addon
  * Domain Path:       /languages
  */
 
@@ -34,24 +34,24 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'KAMALDHARI_SYNC_POST_WITH_LANGUAGE_ADDON_VERSION', '1.0.0' );
+define( 'SYNC_POST_WITH_LANGUAGE_ADDON_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-kamaldhari-sync-post-with-language-addon-activator.php
+ * This action is documented in includes/class-sync-post-with-language-addon-activator.php
  */
-function activate_kamaldhari_sync_post_with_language_addon() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-kamaldhari-sync-post-with-language-addon-activator.php';
-	Kamaldhari_Sync_Post_With_Language_Addon_Activator::activate();
+function activate_sync_post_with_language_addon() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sync-post-with-language-addon-activator.php';
+	Sync_Post_With_Language_Addon_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-kamaldhari-sync-post-with-language-addon-deactivator.php
+ * This action is documented in includes/class-sync-post-with-language-addon-deactivator.php
  */
-function deactivate_kamaldhari_sync_post_with_language_addon() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-kamaldhari-sync-post-with-language-addon-deactivator.php';
-	Kamaldhari_Sync_Post_With_Language_Addon_Deactivator::deactivate();
+function deactivate_sync_post_with_language_addon() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sync-post-with-language-addon-deactivator.php';
+	Sync_Post_With_Language_Addon_Deactivator::deactivate();
 }
 
 /**
@@ -82,17 +82,17 @@ add_action( 'admin_init', 'kspwla_sync_translator_check_dependency' );
  * for AI Sync Translator to function properly.
  */
 function kspwla_sync_translator_admin_notice() {
-	echo '<div class="error"><p><strong>Kamaldhari Sync Post with Language Addon</strong> requires the <a href="https://wordpress.org/plugins/sync-post-with-other-site/" target="_blank">Sync Post with Other Site</a> plugin to be installed and activated. Please install and activate it first.</p></div>';
+	echo '<div class="error"><p><strong>Sync Post with Language Addon</strong> requires the <a href="https://wordpress.org/plugins/sync-post-with-other-site/" target="_blank">Sync Post with Other Site</a> plugin to be installed and activated. Please install and activate it first.</p></div>';
 }
 
-register_activation_hook( __FILE__, 'activate_kamaldhari_sync_post_with_language_addon' );
-register_deactivation_hook( __FILE__, 'deactivate_kamaldhari_sync_post_with_language_addon' );
+register_activation_hook( __FILE__, 'activate_sync_post_with_language_addon' );
+register_deactivation_hook( __FILE__, 'deactivate_sync_post_with_language_addon' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-kamaldhari-sync-post-with-language-addon.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-sync-post-with-language-addon.php';
 
 /**
  * Begins execution of the plugin.
@@ -103,9 +103,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-kamaldhari-sync-post-with-
  *
  * @since    1.0.0
  */
-function run_kamaldhari_sync_post_with_language_addon() {
+function run_sync_post_with_language_addon() {
 
-	$plugin = new Kamaldhari_Sync_Post_With_Language_Addon();
+	$plugin = new Sync_Post_With_Language_Addon();
 	$plugin->run();
 }
-run_kamaldhari_sync_post_with_language_addon();
+run_sync_post_with_language_addon();

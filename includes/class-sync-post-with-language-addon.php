@@ -8,8 +8,8 @@
  * @link       https://profiles.wordpress.org/sagarlakhani/
  * @since      1.0.0
  *
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  */
 
 /**
@@ -22,11 +22,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  * @author     Sagar Lakhani <sagarlakhani024@gmail.com>
  */
-class Kamaldhari_Sync_Post_With_Language_Addon {
+class Sync_Post_With_Language_Addon {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -34,7 +34,7 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Kamaldhari_Sync_Post_With_Language_Addon_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Sync_Post_With_Language_Addon_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -59,13 +59,13 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	/**
 	 * OpenAI instance for handling translations.
 	 *
-	 * This property holds an instance of the KSPWLA_OpenAI class,
+	 * This property holds an instance of the SPWLA_OpenAI class,
 	 * which is responsible for communicating with the OpenAI API
 	 * to translate content while maintaining its structure.
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var KSPWLA_OpenAI
+	 * @var SPWLA_OpenAI
 	 */
 	protected $openai;
 
@@ -79,12 +79,12 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'KAMALDHARI_SYNC_POST_WITH_LANGUAGE_ADDON_VERSION' ) ) {
-			$this->version = KAMALDHARI_SYNC_POST_WITH_LANGUAGE_ADDON_VERSION;
+		if ( defined( 'SYNC_POST_WITH_LANGUAGE_ADDON_VERSION' ) ) {
+			$this->version = SYNC_POST_WITH_LANGUAGE_ADDON_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'kamaldhari-sync-post-with-language-addon';
+		$this->plugin_name = 'sync-post-with-language-addon';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -96,10 +96,10 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Kamaldhari_Sync_Post_With_Language_Addon_Loader. Orchestrates the hooks of the plugin.
-	 * - Kamaldhari_Sync_Post_With_Language_Addon_I18n. Defines internationalization functionality.
-	 * - Kamaldhari_Sync_Post_With_Language_Addon_Admin. Defines all hooks for the admin area.
-	 * - Kamaldhari_Sync_Post_With_Language_Addon_Public. Defines all hooks for the public side of the site.
+	 * - Sync_Post_With_Language_Addon_Loader. Orchestrates the hooks of the plugin.
+	 * - Sync_Post_With_Language_Addon_I18n. Defines internationalization functionality.
+	 * - Sync_Post_With_Language_Addon_Admin. Defines all hooks for the admin area.
+	 * - Sync_Post_With_Language_Addon_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -113,26 +113,26 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( __DIR__ ) . 'includes/class-kamaldhari-sync-post-with-language-addon-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-sync-post-with-language-addon-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( __DIR__ ) . 'includes/class-kamaldhari-sync-post-with-language-addon-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-sync-post-with-language-addon-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( __DIR__ ) . 'admin/class-kamaldhari-sync-post-with-language-addon-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-sync-post-with-language-addon-admin.php';
 
-		require_once plugin_dir_path( __DIR__ ) . 'includes/class-kspwla-languages.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-spwla-languages.php';
 
-		require_once plugin_dir_path( __DIR__ ) . 'includes/class-kspwla-openai.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-spwla-openai.php';
 
-		$this->openai = new KSPWLA_OpenAI();
+		$this->openai = new SPWLA_OpenAI();
 
-		$this->loader = new Kamaldhari_Sync_Post_With_Language_Addon_Loader();
+		$this->loader = new Sync_Post_With_Language_Addon_Loader();
 
 		$this->loader->add_filter( 'spsp_before_send_data_args', $this, 'kspwla_spsp_before_send_data_args', 15, 1 );
 	}
@@ -140,7 +140,7 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Kamaldhari_Sync_Post_With_Language_Addon_I18n class in order to set the domain and to register the hook
+	 * Uses the Sync_Post_With_Language_Addon_I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -148,7 +148,7 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Kamaldhari_Sync_Post_With_Language_Addon_I18n();
+		$plugin_i18n = new Sync_Post_With_Language_Addon_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}
@@ -162,7 +162,7 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Kamaldhari_Sync_Post_With_Language_Addon_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Sync_Post_With_Language_Addon_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -216,7 +216,7 @@ class Kamaldhari_Sync_Post_With_Language_Addon {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Kamaldhari_Sync_Post_With_Language_Addon_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Sync_Post_With_Language_Addon_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

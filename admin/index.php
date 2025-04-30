@@ -6,8 +6,8 @@
  * to plugin files for security purposes.
  *
  * @since      1.0.0
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/admin
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/admin
  * @author     Sagar Lakhani <sagarlakhani024@gmail.com>
  */
 

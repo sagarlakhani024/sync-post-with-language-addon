@@ -21,7 +21,7 @@
  * @link       https://profiles.wordpress.org/sagarlakhani/
  * @since      1.0.0
  *
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
+ * @package    Sync_Post_With_Language_Addon
  */
 
 // If uninstall not called from WordPress, then exit.

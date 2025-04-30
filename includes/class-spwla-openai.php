@@ -2,14 +2,14 @@
 /**
  * Handles translation of WordPress post content using OpenAI API.
  *
- * This file contains the KSPWLA_OpenAI class, which is responsible for
+ * This file contains the SPWLA_OpenAI class, which is responsible for
  * translating post content while preserving its HTML structure.
  *
  * @link       https://profiles.wordpress.org/sagarlakhani/
  * @since      1.0.0
  *
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,17 +17,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class KSPWLA_OpenAI
+ * Class SPWLA_OpenAI
  *
  * This class integrates with the OpenAI API to translate WordPress post content
  * in a structured manner while maintaining its HTML structure.
  *
  * @since      1.0.0
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  * @author     Sagar Lakhani <sagarlakhani024@gmail.com>
  */
-class KSPWLA_OpenAI {
+class SPWLA_OpenAI {
 
 	/**
 	 * The OpenAI API key.
@@ -64,7 +64,7 @@ class KSPWLA_OpenAI {
 		}
 
 		$selected_language = get_option( 'kspwla_translation_language', '' );
-		$language_map      = KSPWLA_Languages::get_supported_languages();
+		$language_map      = SPWLA_Languages::get_supported_languages();
 
 		$target_language = $language_map[ $selected_language ] ?? '';
 

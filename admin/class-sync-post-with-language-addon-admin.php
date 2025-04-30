@@ -5,8 +5,8 @@
  * @link  https://profiles.wordpress.org/sagarlakhani/
  * @since 1.0.0
  *
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/admin
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/admin
  */
 
 /**
@@ -15,11 +15,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/admin
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/admin
  * @author     Sagar Lakhani <sagarlakhani024@gmail.com>
  */
-class Kamaldhari_Sync_Post_With_Language_Addon_Admin {
+class Sync_Post_With_Language_Addon_Admin {
 
 
 	/**
@@ -64,15 +64,15 @@ class Kamaldhari_Sync_Post_With_Language_Addon_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Kamaldhari_Sync_Post_With_Language_Addon_Loader as all of the hooks are defined
+		 * defined in Sync_Post_With_Language_Addon_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Kamaldhari_Sync_Post_With_Language_Addon_Loader will then create the relationship
+		 * The Sync_Post_With_Language_Addon_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/kamaldhari-sync-post-with-language-addon-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/sync-post-with-language-addon-admin.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -86,10 +86,10 @@ class Kamaldhari_Sync_Post_With_Language_Addon_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Kamaldhari_Sync_Post_With_Language_Addon_Loader as all of the hooks are defined
+		 * defined in Sync_Post_With_Language_Addon_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Kamaldhari_Sync_Post_With_Language_Addon_Loader will then create the relationship
+		 * The Sync_Post_With_Language_Addon_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -183,7 +183,7 @@ class Kamaldhari_Sync_Post_With_Language_Addon_Admin {
 		$selected_language = get_option( 'kspwla_translation_language', '' );
 
 		// Available languages.
-		$available_languages = KSPWLA_Languages::get_supported_languages();
+		$available_languages = SPWLA_Languages::get_supported_languages();
 		?>
 
 		<div class="wrap">

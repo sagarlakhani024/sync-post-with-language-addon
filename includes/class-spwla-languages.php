@@ -1,6 +1,6 @@
 <?php
 /**
- * Handles the supported language list for Kamaldhari Sync Post with Language Addon.
+ * Handles the supported language list for Sync Post with Language Addon.
  *
  * This class provides a central location to define the supported languages
  * for the translation functionality. By managing the languages separately,
@@ -9,8 +9,8 @@
  * @link       https://profiles.wordpress.org/sagarlakhani/
  * @since      1.0.0
  *
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Handles the supported language list for Kamaldhari Sync Post with Language Addon.
+ * Handles the supported language list for Sync Post with Language Addon.
  *
  * This class defines and manages the list of supported languages for the plugin.
  * It provides a centralized method to retrieve the available language options,
@@ -28,11 +28,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * languages can be done efficiently without modifying multiple parts of the codebase.
  *
  * @since      1.0.0
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  * @author     Sagar Lakhani <sagarlakhani024@gmail.com>
  */
-class KSPWLA_Languages {
+class SPWLA_Languages {
 
 	/**
 	 * Retrieves the list of supported languages.

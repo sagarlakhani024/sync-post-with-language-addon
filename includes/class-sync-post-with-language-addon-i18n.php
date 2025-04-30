@@ -8,8 +8,8 @@
  * @link       https://profiles.wordpress.org/sagarlakhani/
  * @since      1.0.0
  *
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  */
 
 /**
@@ -19,11 +19,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Kamaldhari_Sync_Post_With_Language_Addon
- * @subpackage Kamaldhari_Sync_Post_With_Language_Addon/includes
+ * @package    Sync_Post_With_Language_Addon
+ * @subpackage Sync_Post_With_Language_Addon/includes
  * @author     Sagar Lakhani <sagarlakhani024@gmail.com>
  */
-class Kamaldhari_Sync_Post_With_Language_Addon_I18n {
+class Sync_Post_With_Language_Addon_I18n {
 
 
 	/**
@@ -34,7 +34,7 @@ class Kamaldhari_Sync_Post_With_Language_Addon_I18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'kamaldhari-sync-post-with-language-addon',
+			'sync-post-with-language-addon',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
